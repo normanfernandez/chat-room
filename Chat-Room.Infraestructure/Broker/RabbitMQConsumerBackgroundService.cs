@@ -20,7 +20,7 @@ namespace Chat_Room.Infraestructure.Broker
         public RabbitMQConsumerBackgroundService(IChatMessageHandler handler)
         {
             this._handler = handler;
-            var factory = new ConnectionFactory { HostName = "localhost", UserName = "pony", Password = "pony" };
+            var factory = new ConnectionFactory { HostName = "localhost", UserName = "guest", Password = "guest" };
 
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
