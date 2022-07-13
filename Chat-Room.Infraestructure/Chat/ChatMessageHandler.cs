@@ -23,7 +23,7 @@ namespace Chat_Room.Infraestructure.Chat
             {
                 Content = @event.Message,
                 RoomId = @event.ChatRoomId,
-                UserId = @event.UserId,
+                UserEmail = @event.UserEmail,
                 Timestamp = @event.Timestamp
             };
 

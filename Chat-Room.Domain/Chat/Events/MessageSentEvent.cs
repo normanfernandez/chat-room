@@ -5,14 +5,14 @@ namespace Chat_Room.Domain.Chat.Events
     public class MessageSentEvent
     {
         public int ChatRoomId { get; private set; }
-        public int UserId { get; private set; }
+        public string UserEmail { get; private set; }
         public string Message { get; private set; }
         public DateTime Timestamp { get; private set; } = DateTime.Now;
 
-        public MessageSentEvent(int chatRoomId, int userId, string message)
+        public MessageSentEvent(int chatRoomId, string userEmail, string message)
         {
             ChatRoomId = chatRoomId;
-            UserId = userId;
+            UserEmail = userEmail;
             Message = message;
         }
     }

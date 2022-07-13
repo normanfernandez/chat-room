@@ -17,7 +17,7 @@ namespace Chat_Room.Infraestructure.Hubs
 
         public async Task SendMessage(ChatMessage message)
         {
-            await Clients.All.SendAsync("MessageSentEvent", message.UserId, message.Content, message.Timestamp.ToString("g", CultureInfo.InvariantCulture), message.RoomId);
+            await Clients.All.SendAsync("MessageSentEvent", message.UserEmail, message.Content, message.Timestamp.ToString("g", CultureInfo.InvariantCulture), message.RoomId);
         }
     }
 }

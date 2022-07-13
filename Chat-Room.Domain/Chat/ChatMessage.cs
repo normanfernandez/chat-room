@@ -9,7 +9,7 @@ namespace Chat_Room.Domain.Chat
         public int Id { get; set; }
         public string Content { get; set; } = string.Empty;
         public int RoomId { get; set; }
-        public int UserId { get; set; }
+        public string UserEmail { get; set; }
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
         public bool IsCommand 

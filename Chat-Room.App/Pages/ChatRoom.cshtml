@@ -1,0 +1,52 @@
+﻿@page "{id}"
+@model Chat_Room.App.Pages.ChatRoomModel
+@using System.Globalization
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChatRoom</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-2">Message</div>
+            <div class="col-4"><textarea id="messageInput" maxlength="512" rows="3" ></textarea></div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-6">
+                <input type="button" id="sendButton" value="Send Message" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        @Html.HiddenFor(r => r.RoomId, new { id = "hdRoomId" })
+        @Html.HiddenFor(r => r.UserEmail, new { id = "hdUserEmail" })
+        <div class="col-6">
+            <ul id="messagesList">
+                @foreach (var item in Model.ChatMessage.OrderBy(r => r.Timestamp))
+                {
+                    <li>
+                        @($"{item.UserEmail} says {item.Content} - sent {item.Timestamp.ToString("g", CultureInfo.InvariantCulture)}")
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <script src="~/microsoft-signalr/signalr.min.js"></script>
+    <script src="~/axios/axios.min.js"></script>
+    <script src="~/js/chat.js"></script>
+</body>
+</html>

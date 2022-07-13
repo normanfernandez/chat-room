@@ -2,14 +2,14 @@
 {
     public class BotChatMessage : ChatMessage
     {
-        public const int BOT_USER_ID = -1;
+        public const string BOT_USER_ID = "BOT-KUN";
         public const string UNSUPPORTED_COMMAND_MESSAGE = "COMMAND NOT SUPPORTED";
 
         public BotChatMessage(int roomId, string message)
         {
             this.Content = message;
             this.RoomId = roomId;
-            this.UserId = BOT_USER_ID;
+            this.UserEmail = BOT_USER_ID;
         }
 
         public static BotChatMessage CreateUnsupportedCommandChatMessage(int roomId)

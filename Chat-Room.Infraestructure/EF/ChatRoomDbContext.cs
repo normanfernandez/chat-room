@@ -18,7 +18,7 @@ namespace Chat_Room.Infraestructure.EF
             var charMessageEntity = modelBuilder.Entity<ChatMessage>();
 
             charMessageEntity
-                .HasData(new ChatMessage { UserId = BotChatMessage.BOT_USER_ID, RoomId = 1, Content = "Ohayo~", Id = 1 });
+                .HasData(new ChatMessage { UserEmail = BotChatMessage.BOT_USER_ID, RoomId = 1, Content = "Ohayo~", Id = 1 });
 
             charMessageEntity
                 .Property(r => r.Id)

@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "microsoft-signalr@6.0.7",
+      "destination": "wwwroot/microsoft-signalr/",
+      "files": [
+        "signalr.min.js"
+      ]
+    },
+    {
+      "library": "axios@0.27.2",
+      "destination": "wwwroot/axios/",
+      "files": [
+        "axios.min.js"
+      ]
+    }
+  ]
+}
