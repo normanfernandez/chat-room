@@ -15,7 +15,6 @@ namespace Chat_Room.Domain.Stocks
             Symbol = "ERROR"
         };
 
-
         /// <summary>
         /// The symbol of the stock.
         /// </summary>
@@ -50,5 +49,10 @@ namespace Chat_Room.Domain.Stocks
         /// Current volume.
         /// </summary>
         public long Volume { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Symbol} quote is ${Open} per share";
+        }
     }
 }
